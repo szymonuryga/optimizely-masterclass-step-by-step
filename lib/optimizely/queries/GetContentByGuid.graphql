@@ -1,0 +1,20 @@
+# GetContentByGuid.graphql
+
+query GetContentByGuid($guid: String) {
+  _Content(where: { _metadata: { key: { eq: $guid } } }) {
+    items {
+      _metadata {
+        displayName
+        version
+        key
+        url {
+          base
+          internal
+          hierarchical
+          default
+          type
+        }
+      }
+    }
+  }
+}
