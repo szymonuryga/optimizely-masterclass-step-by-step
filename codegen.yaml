@@ -1,0 +1,11 @@
+schema: ${OPTIMIZELY_API_URL}?auth=${OPTIMIZELY_SINGLE_KEY}
+documents: './lib/optimizely/queries/**/*.graphql'
+generates:
+  './lib/optimizely/types/generated.ts':
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-generic-sdk'
+    config:
+      rawRequest: true
+      avoidOptionals: true
