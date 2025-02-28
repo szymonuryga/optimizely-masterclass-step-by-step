@@ -3,11 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-
-interface ContactBlockProps {
-  title: string
-  description: string
-}
+import { ContactBlock as ContactBlockProps } from '@/lib/optimizely/types/generated'
 
 export default function ContactBlock({
   title,
