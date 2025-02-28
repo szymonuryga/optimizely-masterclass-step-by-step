@@ -12,6 +12,9 @@ const PortfolioGridBlock = dynamic(
 )
 const ServicesBlock = dynamic(() => import('../block/services-block'))
 const TestimonialsBlock = dynamic(() => import('../block/testimonials-block'))
+const AvailabilityBlock = dynamic(() => import('../block/availability-block'))
+const ProfileBlock = dynamic(() => import('../block/profile-block'))
+const StoryBlock = dynamic(() => import('../block/story-block'))
 
 // Map the dynamically imported
 export const blocks = {
@@ -21,6 +24,9 @@ export const blocks = {
   PortfolioGridBlock,
   ServicesBlock,
   TestimonialsBlock,
+  AvailabilityBlock,
+  ProfileBlock,
+  StoryBlock
 } as const
 
 export default blocksMapperFactory(blocks)

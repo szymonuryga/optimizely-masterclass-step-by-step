@@ -60,6 +60,23 @@ fragment TestimonialsBlockFragment on TestimonialsBlock {
   }
 }
 
+fragment ProfileBlockFragment on ProfileBlock {
+  imageSrc
+  bio
+  name
+  title
+}
+
+fragment AvailabilityBlockFragment on AvailabilityBlock {
+  availability
+  projectTypes
+}
+
+fragment StoryBlockFragment on StoryBlock {
+  story
+  highlights
+}
+
 fragment ItemsInContentArea on _IContent {
   __typename
   ...HeroBlockFragment
@@ -68,4 +85,7 @@ fragment ItemsInContentArea on _IContent {
   ...PortfolioGridBlockFragment
   ...ServicesBlockFragment
   ...TestimonialsBlockFragment
+  ...ProfileBlockFragment
+  ...AvailabilityBlockFragment
+  ...StoryBlockFragment
 }
