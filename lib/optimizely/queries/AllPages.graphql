@@ -1,0 +1,20 @@
+# lib/optimizely/queries/AllPages.graphql
+
+query AllPages($pageType: [String]) {
+  _Content(where: { _metadata: { types: { in: $pageType } } }) {
+    items {
+      _metadata {
+        displayName
+        url {
+          base
+          internal
+          hierarchical
+          default
+          type
+        }
+        types
+        status
+      }
+    }
+  }
+}
