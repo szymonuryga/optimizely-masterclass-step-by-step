@@ -6,6 +6,7 @@ function ContentAreaMapper({
   blocks,
   preview = false
 }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   blocks?: any[] | null;
   preview?: boolean;
 }) {
