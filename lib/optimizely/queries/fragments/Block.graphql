@@ -1,0 +1,71 @@
+# lib/optimizely/queries/fragments/Block.graphql
+
+fragment HeroBlockFragment on HeroBlock {
+  title
+  subtitle
+  decorationColorsPrimary
+  decorationColorsSecondary
+  showDecoration
+}
+
+fragment ContactBlockFragment on ContactBlock {
+  title
+  description
+}
+
+fragment LogosBlockFragment on LogosBlock {
+  logos {
+    __typename
+    ... on LogoItemBlock {
+      src
+      alt
+    }
+  }
+}
+
+fragment PortfolioGridBlockFragment on PortfolioGridBlock {
+  title
+  items {
+    __typename
+    ... on PortfolioItemBlock {
+      title
+      description
+      imageUrl
+      link
+    }
+  }
+}
+
+fragment ServicesBlockFragment on ServicesBlock {
+  services {
+    __typename
+    ... on ServiceItem {
+      title
+      description
+      icon
+    }
+  }
+}
+
+fragment TestimonialsBlockFragment on TestimonialsBlock {
+  title
+  testimonials {
+    __typename
+    ... on TestimonialItemBlock {
+      fullName
+      position
+      content
+      avatarSrc
+    }
+  }
+}
+
+fragment ItemsInContentArea on _IContent {
+  __typename
+  ...HeroBlockFragment
+  ...ContactBlockFragment
+  ...LogosBlockFragment
+  ...PortfolioGridBlockFragment
+  ...ServicesBlockFragment
+  ...TestimonialsBlockFragment
+}

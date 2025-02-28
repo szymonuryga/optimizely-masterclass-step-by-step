@@ -1,0 +1,14 @@
+# lib/optimizely/queries/GetStartPage.graphql
+
+query GetStartPage($locales: [Locales]) {
+  StartPage(locale: $locales) {
+    items {
+      title
+      shortDescription
+      keywords
+      blocks {
+        ...ItemsInContentArea
+      }
+    }
+  }
+}

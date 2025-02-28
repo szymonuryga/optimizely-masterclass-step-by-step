@@ -1,0 +1,18 @@
+# lib/optimizely/queries/GetPageByURL.graphql
+
+query getPageByURL($locales: [Locales], $slug: String) {
+  CMSPage(
+    locale: $locales
+    where: { _metadata: { url: { default: { eq: $slug } } } }
+  ) {
+    items {
+      title
+      shortDescription
+      keywords
+      _modified
+      blocks {
+        ...ItemsInContentArea
+      }
+    }
+  }
+}
