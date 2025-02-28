@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import '@/app/globals.css'
 import { LOCALES } from '@/lib/optimizely/utils/language'
+import { Header } from '@/components/layout/header'
+import { Footer } from '@/components/layout/footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,7 +36,9 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Header locale={locale} />
+        <main className="container mx-auto min-h-screen px-4">{children}</main>
+        <Footer locale={locale} />
       </body>
     </html>
   )
