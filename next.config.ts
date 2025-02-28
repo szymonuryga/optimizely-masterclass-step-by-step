@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     domains: ['res.cloudinary.com'],
     loader: 'custom',
     loaderFile: './lib/image/loader.ts',
-  }
+  },
 }
 
 export default nextConfig

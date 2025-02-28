@@ -26,7 +26,7 @@ const optimizelyFetch = async <Response, Variables = object>({
   headers,
   cache = 'force-cache',
   preview,
-  cacheTag
+  cacheTag,
 }: OptimizelyFetch<Variables>): Promise<
   GraphqlResponse<Response> & { headers: Headers }
 > => {

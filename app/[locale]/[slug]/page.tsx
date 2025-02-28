@@ -1,9 +1,12 @@
 // app/[locale]/[slug]/page.tsx
-import ContentAreaMapper from '@/components/content-area/mapper';
-import { optimizely } from '@/lib/optimizely/fetch';
-import { getValidLocale, mapPathWithoutLocale } from '@/lib/optimizely/utils/language';
-import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
+import ContentAreaMapper from '@/components/content-area/mapper'
+import { optimizely } from '@/lib/optimizely/fetch'
+import {
+  getValidLocale,
+  mapPathWithoutLocale,
+} from '@/lib/optimizely/utils/language'
+import { notFound } from 'next/navigation'
+import { Suspense } from 'react'
 
 export async function generateStaticParams() {
   try {

@@ -10,10 +10,8 @@ const HEADER_KEY_LOCALE = 'X-Locale'
 
 function shouldExclude(path: string) {
   return (
-    path.startsWith('/static') ||
-    path.includes('/api/') ||
-    path.includes('.')
-  );
+    path.startsWith('/static') || path.includes('/api/') || path.includes('.')
+  )
 }
 
 function getBrowserLanguage(
@@ -123,9 +121,9 @@ export async function middleware(request: NextRequest) {
 
   updateLocaleCookies(request, response, locale)
 
-  return response;
+  return response
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
-};
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+}

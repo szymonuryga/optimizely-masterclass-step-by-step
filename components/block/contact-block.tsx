@@ -1,18 +1,21 @@
 // components\block\contact-block.tsx
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 interface ContactBlockProps {
   title: string
   description: string
 }
 
-export default function ContactBlock({ title, description }: ContactBlockProps) {
+export default function ContactBlock({
+  title,
+  description,
+}: ContactBlockProps) {
   return (
     <section className="container mx-auto px-4 py-16">
-      <Card className="max-w-xl mx-auto">
+      <Card className="mx-auto max-w-xl">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <p className="text-muted-foreground">{description}</p>
@@ -29,4 +32,3 @@ export default function ContactBlock({ title, description }: ContactBlockProps) 
     </section>
   )
 }
-

@@ -1,7 +1,7 @@
-import ContentAreaMapper from "@/components/content-area/mapper"
-import { optimizely } from "@/lib/optimizely/fetch"
-import { getValidLocale } from "@/lib/optimizely/utils/language"
-import { Suspense } from "react"
+import ContentAreaMapper from '@/components/content-area/mapper'
+import { optimizely } from '@/lib/optimizely/fetch'
+import { getValidLocale } from '@/lib/optimizely/utils/language'
+import { Suspense } from 'react'
 
 export default async function HomePage(props: {
   params: Promise<{ locale: string }>
