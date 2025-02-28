@@ -21,12 +21,17 @@ export default function StoryBlock({ story, highlights }: StoryBlockProps) {
       <Card className="border-none">
         <CardContent className="p-8">
           <div className="mx-auto max-w-3xl">
-            <p className="mb-8 text-xl leading-relaxed text-[#2d2d2d]">
+            <p
+              className="mb-8 text-xl leading-relaxed text-[#2d2d2d]"
+              data-epi-edit="story"
+            >
               {story}
             </p>
-            {highlights?.map((highlight, index) => (
-              <Highlight key={index} text={highlight ?? ''} />
-            ))}
+            <div data-epi-edit="highlights">
+              {highlights?.map((highlight, index) => (
+                <Highlight key={index} text={highlight ?? ''} />
+              ))}
+            </div>
           </div>
         </CardContent>
       </Card>

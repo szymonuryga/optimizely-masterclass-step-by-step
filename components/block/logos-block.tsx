@@ -1,6 +1,5 @@
 //components\block\logos-block.tsx
 import Image from 'next/image'
-
 import {
   LogosBlock as LogosBlockProps,
   LogoItemBlock,
@@ -10,7 +9,10 @@ import { castContent } from '@/lib/optimizely/types/typeUtils'
 export default function LogosBlock({ logos }: LogosBlockProps) {
   return (
     <section className="container mx-auto px-4 py-16">
-      <div className="flex flex-wrap justify-center gap-12">
+      <div
+        className="flex flex-wrap justify-center gap-12"
+        data-epi-edit="logos"
+      >
         {logos?.map((logo, index) => {
           const safeLogoItem = castContent<LogoItemBlock>(logo, 'LogoItemBlock')
           if (!safeLogoItem) return null
@@ -30,3 +32,4 @@ export default function LogosBlock({ logos }: LogosBlockProps) {
     </section>
   )
 }
+

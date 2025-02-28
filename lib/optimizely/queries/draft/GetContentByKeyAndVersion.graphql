@@ -1,0 +1,19 @@
+query GetContentByKeyAndVersion($key: String, $ver: String) {
+  _Content(where: { _metadata: { key: { eq: $key }, version: { eq: $ver } } }) {
+    items {
+      __typename
+      _metadata {
+        displayName
+        version
+        key
+        url {
+          base
+          internal
+          hierarchical
+          default
+          type
+        }
+      }
+    }
+  }
+}

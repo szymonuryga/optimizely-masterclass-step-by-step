@@ -1,0 +1,12 @@
+query GetPreviewStartPage($locales: [Locales], $version: String) {
+  StartPage(
+    locale: $locales
+    where: { _metadata: { version: { eq: $version } } }
+  ) {
+    items {
+      blocks {
+        ...ItemsInContentArea
+      }
+    }
+  }
+}

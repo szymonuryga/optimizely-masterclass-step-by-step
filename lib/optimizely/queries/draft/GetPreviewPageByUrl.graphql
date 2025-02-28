@@ -1,0 +1,19 @@
+query getPreviewPageByURL(
+  $locales: [Locales]
+  $slug: String
+  $version: String
+) {
+  CMSPage(
+    locale: $locales
+    where: {
+      _metadata: { version: { eq: $version } }
+      _and: { _metadata: { url: { default: { eq: $slug } } } }
+    }
+  ) {
+    items {
+      blocks {
+        ...ItemsInContentArea
+      }
+    }
+  }
+}

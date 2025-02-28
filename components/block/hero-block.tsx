@@ -10,7 +10,7 @@ export default function HeroBlock({
   decorationColorsSecondary = '#ffd285',
 }: HeroBlockProps) {
   return (
-    <section className="relative container mx-auto px-4 pt-20 pb-16">
+    <section className="container relative mx-auto px-4 pb-16 pt-20">
       <div className={cn('flex flex-col', { 'sm:pr-60': showDecoration })}>
         <h1
           className="mb-4 w-full max-w-xl text-4xl font-bold md:text-6xl"
@@ -20,7 +20,7 @@ export default function HeroBlock({
         </h1>
         {subtitle && (
           <p
-            className="text-muted-foreground mb-8 max-w-xl text-xl"
+            className="mb-8 max-w-xl text-xl text-muted-foreground"
             data-epi-edit="subtitle"
           >
             {subtitle}
@@ -28,14 +28,16 @@ export default function HeroBlock({
         )}
       </div>
       {showDecoration && (
-        <div className="absolute top-10 right-20">
-          <div className="relative h-48 w-48">
+        <div className="absolute right-20 top-10 hidden sm:block">
+          <div className="relative h-48 w-48 lg:h-72 lg:w-72">
             <div
-              className="absolute right-0 h-32 w-32 rounded-full"
+              className="absolute right-0 h-32 w-32 rounded-full lg:h-56 lg:w-56"
+              data-epi-edit="decorationColorsPrimary"
               style={{ backgroundColor: decorationColorsPrimary ?? '#009379' }}
             />
             <div
-              className="absolute bottom-0 left-0 h-40 w-40 rounded-full"
+              className="absolute bottom-0 left-0 h-40 w-40 rounded-full lg:h-60 lg:w-60"
+              data-epi-edit="decorationColorsSecondary"
               style={{
                 backgroundColor: decorationColorsSecondary ?? '#ffd285',
               }}

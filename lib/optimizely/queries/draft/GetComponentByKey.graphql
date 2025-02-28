@@ -1,0 +1,13 @@
+query GetComponentByKey($locales: [Locales], $key: String, $version: String) {
+  _Component(
+    locale: $locales
+    where: {
+      _metadata: { key: { eq: $key } }
+      _or: { _metadata: { version: { eq: $version } } }
+    }
+  ) {
+    items {
+      ...ItemsInContentArea
+    }
+  }
+}
