@@ -17,12 +17,14 @@ export interface ExperienceElement {
     value: string
     key: string
   }[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component?: any
 }
 
 export interface VisualBuilderNode {
   nodeType: 'section' | 'component'
   key: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component?: any
   rows?: Row[]
 }
