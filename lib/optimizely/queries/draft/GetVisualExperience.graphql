@@ -1,0 +1,56 @@
+query VisualBuilder($locales: [Locales], $key: String, $version: String) {
+  SEOExperience(
+    locale: $locales
+    where: {
+      _metadata: { key: { eq: $key } }
+      _or: { _metadata: { version: { eq: $version } } }
+    }
+  ) {
+    items {
+      composition {
+        nodes {
+          nodeType
+          key
+          displaySettings {
+            value
+            key
+          }
+          ... on CompositionComponentNode {
+            component {
+              ...ItemsInContentArea
+            }
+          }
+          ... on CompositionStructureNode {
+            key
+            rows: nodes {
+              ... on CompositionStructureNode {
+                key
+                columns: nodes {
+                  ... on CompositionStructureNode {
+                    key
+                    elements: nodes {
+                      key
+                      displaySettings {
+                        value
+                        key
+                      }
+                      ... on CompositionComponentNode {
+                        component {
+                          ...ItemsInContentArea
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      _metadata {
+        key
+        version
+      }
+    }
+  }
+}

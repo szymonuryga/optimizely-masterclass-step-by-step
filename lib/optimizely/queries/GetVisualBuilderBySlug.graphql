@@ -1,0 +1,53 @@
+# lib/optimizely/queries/GetVisualBuilderBySlug.graphql
+query GetVisualBuilderBySlug($locales: [Locales], $slug: String) {
+  SEOExperience(
+    locale: $locales
+    where: { _metadata: { url: { default: { eq: $slug } } } }
+  ) {
+    items {
+      title
+      shortDescription
+      keywords
+      composition {
+        nodes {
+          nodeType
+          key
+          displaySettings {
+            value
+            key
+          }
+          ... on CompositionComponentNode {
+            component {
+              ...ItemsInContentArea
+            }
+          }
+          ... on CompositionStructureNode {
+            key
+            rows: nodes {
+              ... on CompositionStructureNode {
+                key
+                columns: nodes {
+                  ... on CompositionStructureNode {
+                    key
+                    elements: nodes {
+                      key
+                      displaySettings {
+                        value
+                        key
+                      }
+                      ... on CompositionComponentNode {
+                        component {
+                          ...ItemsInContentArea
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
